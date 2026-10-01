@@ -1,11 +1,10 @@
-import { LoginPage } from "../Pages/LoginPage";
+import { LoginPage } from "../Pages/LoginPage.js";
 import { test as base } from "@playwright/test";
-import { HomePage } from "../Pages";
 
 export const test = base.extend({
-    loginPage: async ({ page }, use) => {
-        await use(new LoginPage(page));
-    }
+  loginPage: async ({ page }, use) => {
+    await use(new LoginPage(page));
+  },
 });
 
-test.use({ storageState: 'playwright/.auth/user.json' });
+test.use({ storageState: "playwright/.auth/user.json" });
